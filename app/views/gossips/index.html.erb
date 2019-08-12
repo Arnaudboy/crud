@@ -1,0 +1,17 @@
+<h1>COUCOU</h1>
+
+<tbody>
+    <% @gossips.each do |gossip| %>
+      <tr>
+        <td><%= gossip.titre %></td>
+        <td><%= gossip.content %></td>
+        <td><%= gossip.author %></td>
+       <p> 
+        <td><a href="<%= gossip_path(gossip.id)%>" class="btn btn-primary">Voir la suite</a></td>
+        <td><a href="<%= edit_gossip_path(gossip.id)%>" class="btn btn-secondary">Editer</a></td>
+        <td><a href="<%= gossip_path(gossip.id)%>" class="btn btn-danger" data-confirm="t'es sûr de toi bro ?" data-method="DELETE">Supprimer</a></td>
+      </p>
+      </tr></br></br>
+    <% end %>
+  </tbody>
+   <p><a href="<%= new_gossip_path%>" class="btn btn-success">Créer</a></p>
